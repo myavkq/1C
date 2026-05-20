@@ -1,0 +1,273 @@
+:root {
+    --bg-color: #f1f5f9;
+    --sidebar-bg: #1e293b;
+    --sidebar-text: #f8fafc;
+    --sidebar-hover: #334155;
+    --card-bg: #ffffff;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --primary: #2563eb;
+    --accent: #d97706;
+    --border: #e2e8f0;
+    --code-bg: #0f172a;
+    --code-text: #38bdf8;
+    --info-bg: #fef3c7;
+    --info-text: #92400e;
+    --success: #10b981;
+    --success-hover: #059669;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Навигационная панель слева */
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 24px;
+    overflow-y: auto;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-content {
+    flex-grow: 1;
+}
+
+.sidebar h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    color: #38bdf8;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+.sidebar nav a {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar nav a:hover {
+    background-color: var(--sidebar-hover);
+    color: #ffffff;
+    padding-left: 18px;
+}
+
+/* Контейнер для кнопок скачивания/просмотра файлов */
+.file-buttons {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+}
+
+.btn-file {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.btn-view {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.btn-view:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-download {
+    background-color: var(--success);
+    color: #ffffff;
+}
+
+.btn-download:hover {
+    background-color: var(--success-hover);
+}
+
+.btn-file:active {
+    transform: scale(0.98);
+}
+
+/* Основной контент */
+.main-content {
+    margin-left: 280px;
+    padding: 40px;
+    max-width: 1100px;
+    width: calc(100% - 280px);
+}
+
+header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 15px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #0f172a;
+}
+
+header p {
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+/* Стили разделов */
+section {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary);
+    padding-left: 10px;
+}
+
+section h3 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* Текстовые плейсхолдеры */
+.placeholder-text {
+    color: var(--text-muted);
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* Плейсхолдеры картинок */
+.image-placeholder {
+    border: 2px dashed #cbd5e1;
+    background: #f8fafc;
+    border-radius: 6px;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    margin: 20px 0;
+    font-size: 0.95rem;
+}
+
+.image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Контейнеры для кода */
+.code-container {
+    margin: 15px 0;
+    background-color: var(--code-bg);
+    border-radius: 6px;
+    overflow: hidden;
+    border-top: 3px solid var(--primary);
+}
+
+.code-header {
+    background-color: #1e293b;
+    color: #94a3b8;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-family: monospace;
+    border-bottom: 1px solid #0f172a;
+}
+
+pre {
+    padding: 16px;
+    overflow-x: auto;
+    margin: 0;
+}
+
+code {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+    font-size: 0.9rem;
+    color: var(--code-text);
+    line-height: 1.5;
+}
+
+/* Блоки с важными замечаниями */
+.info-box {
+    background-color: var(--info-bg);
+    color: var(--info-text);
+    border-left: 4px solid var(--accent);
+    padding: 15px;
+    border-radius: 0 6px 6px 0;
+    margin: 20px 0;
+    font-size: 0.95rem;
+}
+
+.info-box strong {
+    color: #78350f;
+}
+
+/* Адаптивность для мобильных экранов */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        bottom: auto;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+    }
+}
